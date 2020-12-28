@@ -1,0 +1,47 @@
+version: '3.7'
+
+services:
+  strapi:
+    image: strapi/strapi
+    secrets:
+      - my_secrets
+    volumes:
+      - ./backend:/srv/app
+    # ports:
+    #   - 1337:1337
+    depends_on:
+      - mongo
+      - caddy
+    restart: always
+    env_file:
+      - ./.env
+
+  mongo:
+    image: mongo
+    secrets:
+      - my_secrets
+    volumes:
+      - ./data:/data/db
+    env_file:
+      - ./.env
+    restart: always
+    depends_on:
+      - caddy
+  caddy:
+    image: caddy:alpine
+    container_name: webserver
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./caddy_data:/data
+      - ./caddy_config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    
+
+
+      
+secrets:
+  my_secrets:
+    file: ./.env
