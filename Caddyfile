@@ -3,5 +3,6 @@ api.benedikt-bergenthal.de {
 }
 
 benedikt-bergenthal.de {
-    reverse_proxy frontend
+	encode gzip
+	reverse_proxy frontend
 }
