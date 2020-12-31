@@ -1,38 +1,70 @@
 <template>
+  <!-- <section class="hero is-dark is-fullheight"> -->
   <div class="home">
-    <h1>Hello World</h1>
+    <div class="">
+      <img src="../assets/images/bg.jpg" alt="Background" />
+      <!-- <img src="../assets/images/bg.jpg" alt="Background" /> -->
+      <div class="text-center">
+        <h1>Hello World</h1>
+      </div>
+    </div>
   </div>
+  <!-- </section> -->
 </template>
 
 <script>
 // @ is an alias to /src
 
-
 export default {
-  name: 'Home',
-
+  name: "Home"
 };
 </script>
 
 <style lang="scss" scoped>
 .home {
-  background-image: url("../assets/images/bg.jpg")   ;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-
-  h1  {
-    font-size: 10em;
-    font-weight: 200;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    height: 100vh;
-    padding: 0;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 100%;
+  img {
+    width: 100%;
   }
+}
+.hero-background {
+  position: absolute;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.text-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  h1 {
+    font-size: 10rem;
+    font-weight: 200;
+    font-family: "Montserrat", sans-serif;
+    &:hover {
+      transform: scale(1.25);
+    }
+    transition: transform 2000ms ease-in-out;
+    -webkit-transition: -webkit-transform 2000ms ease-in-out;
+  }
+}
+
+h1 {
+  font-size: 10em;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+  &:hover {
+    transform: scale(1.25);
+  }
+  transition: transform 2000ms ease-in-out;
+  -webkit-transition: -webkit-transform 2000ms ease-in-out;
 }
 </style>
