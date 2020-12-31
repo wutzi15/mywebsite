@@ -3,8 +3,8 @@
     <nav class="tabs is-boxed is-fullwidth">
       <div class="container">
         <ul>
-          <li><a href="">Impressum</a></li>
-          <li><a href="">Datenschutz</a></li>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
         </ul>
       </div>
     </nav>

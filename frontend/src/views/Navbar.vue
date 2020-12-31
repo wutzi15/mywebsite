@@ -1,5 +1,5 @@
 <template>
-  <b-navbar :transparent="true" :fixed-top="true" :mobile-burger="false">
+  <b-navbar :transparent="true" :fixed-top="true" :mobile-burger="true">
 
         <template slot="start">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
@@ -55,4 +55,18 @@ a {
   color: white;
 }
 
+@media(max-width: 1024px){
+  a {
+    color: #222;
+  }
+
+.navbar-burger {
+  color: #fff !important;
+}
+}
+
+
+.navbar-burger {
+  color: #fff !important;
+}
 </style>

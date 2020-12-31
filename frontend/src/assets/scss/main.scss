@@ -69,7 +69,9 @@ $colors: mergeColorMaps(
     ),
     $custom-colors
 );
-
+.navbar-burger {
+  color: #fff !important;
+}
 // Links
 $link: $primary;
 $link-invert: $primary-invert;

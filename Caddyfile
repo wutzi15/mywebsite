@@ -1,3 +1,7 @@
 api.benedikt-bergenthal.de {
     reverse_proxy strapi:1337
 }
+
+benedikt-bergenthal.de {
+    reverse_proxy frontend
+}

@@ -38,10 +38,16 @@ services:
       - ./caddy_data:/data
       - ./caddy_config:/config
       - ./Caddyfile:/etc/caddy/Caddyfile
-    
+  frontend:
+    container_name: frontend
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    restart: always
 
 
-      
+
+
 secrets:
   my_secrets:
     file: ./.env

@@ -2,10 +2,12 @@
   <!-- <section class="hero is-dark is-fullheight"> -->
   <div class="home">
     <div class="">
-      <img src="../assets/images/bg.jpg" alt="Background" />
+      <!-- <img src="../assets/images/bg.jpg" alt="Background" /> -->
       <!-- <img src="../assets/images/bg.jpg" alt="Background" /> -->
       <div class="text-center">
-        <h1>Hello World</h1>
+        <h1>Welcome</h1>
+        <h2>Technology & Art</h2>
+        <h4>Work in Progress</h4>
       </div>
     </div>
   </div>
@@ -16,7 +18,7 @@
 // @ is an alias to /src
 
 export default {
-  name: "Home"
+  name: "Home",
 };
 </script>
 
@@ -25,10 +27,11 @@ export default {
   position: relative;
   text-align: center;
   color: white;
-  height: 100%;
-  img {
-    width: 100%;
-  }
+  height: 100vh;
+  background-image: url("../assets/images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .hero-background {
   position: absolute;
@@ -46,7 +49,7 @@ export default {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   h1 {
-    font-size: 10rem;
+    font-size: 10vh;
     font-weight: 200;
     font-family: "Montserrat", sans-serif;
     &:hover {
@@ -54,6 +57,11 @@ export default {
     }
     transition: transform 2000ms ease-in-out;
     -webkit-transition: -webkit-transform 2000ms ease-in-out;
+  }
+  h2{
+    font-size: 3rem;
+    font-weight: 200;
+    font-family: "Montserrat", sans-serif;
   }
 }
 

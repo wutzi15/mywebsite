@@ -50,4 +50,11 @@ export default {
 body{
   padding-top: 0px!important;
 }
+
+body, html {
+  margin:0;
+  padding:0;
+  color: $primary;
+  background: $dark;
+}
 </style>
