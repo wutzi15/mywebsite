@@ -26,9 +26,10 @@ export default {
   },
   methods: {
     convertText: function() {
-      console.log(`Content: ${this.entry.content}`)
+      // console.log(`Content: ${this.entry.content}`)
       const converter = new showdown.Converter();
-      this.myhtml = converter.makeHtml(this.entry.content);
+      const tmp = converter.makeHtml(this.entry.content);
+      this.myhtml = tmp.replace('<img src="/uploads', '<img src="https://api.benedikt-bergenthal.de/uploads');
 
     }
   }
