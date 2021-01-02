@@ -24,6 +24,12 @@ const routes = [
     component: () => import('../views/Blog.vue'),
   },
   {
+    path: '/SingleEntry',
+    name: 'SingleEntry',
+    component: () => import('../views/SingleEntry.vue'),
+    props: true
+  },
+  {
     path: '/fotos',
     name: 'Fotos',
     component: () => import('../views/Fotos.vue'),
