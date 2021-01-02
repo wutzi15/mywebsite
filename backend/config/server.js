@@ -11,6 +11,6 @@ module.exports = ({ env }) => ({
     enabled: true,
     ssl: true,
     host: "https://api.benedikt-bergenthal.de",
-    port 443,
+    port:  443,
   }
 });
