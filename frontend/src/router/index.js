@@ -24,7 +24,7 @@ const routes = [
     component: () => import('../views/Blog.vue'),
   },
   {
-    path: '/SingleEntry',
+    path: '/SingleEntry/:id',
     name: 'SingleEntry',
     component: () => import('../views/SingleEntry.vue'),
     props: true
