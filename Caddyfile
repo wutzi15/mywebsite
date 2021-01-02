@@ -6,3 +6,7 @@ benedikt-bergenthal.de {
 	encode gzip
 	reverse_proxy frontend
 }
+
+hooks.benedikt-bergenthal.de {
+	reverse_proxy http://benedikt-bergenthal.de:9000
+}
