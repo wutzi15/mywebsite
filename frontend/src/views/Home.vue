@@ -5,7 +5,7 @@
       <!-- <img src="../assets/images/bg.jpg" alt="Background" /> -->
       <!-- <img src="../assets/images/bg.jpg" alt="Background" /> -->
       <div class="text-center">
-        <h1>Welcome</h1>
+        <h1>Welcome!</h1>
         <h2>Technology & Art</h2>
         <h4>Work in Progress</h4>
       </div>
