@@ -1,7 +1,7 @@
 <template>
   <div class="columns">
     <div class="column"></div>
-    <div class="column is-half">
+    <div class="column is-third">
       <h1>Blog</h1>
       <div v-for="entry in entries" :key="entry.id">
         <router-link :to="{ name: 'SingleEntry', params: { entry} }" >
