@@ -7,4 +7,10 @@ module.exports = ({ env }) => ({
       secret: env('ADMIN_JWT_SECRET'),
     },
   },
+  proxy: {
+    enabled: true,
+    ssl: true,
+    host: "https://api.benedikt-bergenthal.de",
+    port 443,
+  }
 });
