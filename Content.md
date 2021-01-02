@@ -5,5 +5,4 @@
 # Legal
 ## Impressum
 ## Datenschutz
-#foo
 
