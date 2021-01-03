@@ -38,7 +38,18 @@ export default {
           "https://api.benedikt-bergenthal.de/blog-entries"
         );
         console.log(`Entrie ${results.data}`);
-        this.entries = results.data;
+        const myData = results.data.sort((a,b) => {
+          const dateA = new Date(a.createdAt);
+          const dateB = new Date(b.createdAt);
+          if (dateA < dateB) {
+            return 1;
+          }
+          if (dateA > dateB) {
+            return -1;
+          }
+          return 0;
+        })
+        this.entries = myData;
       } catch (error) {
         console.error(error);
       }
