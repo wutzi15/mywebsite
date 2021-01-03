@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "image_categories",
+  "info": {
+    "name": "Image Category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "images": {
+      "collection": "image",
+      "via": "image_categories",
+      "dominant": true
+    }
+  }
+}
