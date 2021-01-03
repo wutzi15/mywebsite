@@ -104,6 +104,10 @@ h5 {
 h6 {
   font-size: 1.1rem;
 }
+
+p {
+  padding-bottom: 1.75rem;
+}
 /*
 .hljs {
   display: block;
