@@ -1,6 +1,5 @@
 api.benedikt-bergenthal.de {
-	encode gzip
-	reverse_proxy strapi
+	reverse_proxy strapi:1337
 }
 
 benedikt-bergenthal.de {
