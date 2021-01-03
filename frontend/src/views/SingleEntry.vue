@@ -67,7 +67,12 @@ export default {
 code {
   font-family: "Fira Code", monospace;
   color: #333;
+  // background-color: #00354B;
 }
+
+// pre {
+//    background-color: #00354B;
+// }
 
 body {
   padding: 20px;
@@ -82,5 +87,181 @@ h1 {
 
 h2 {
   font-size: 2rem;
+}
+/*
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  // background: #193549;
+  // color: #00354B;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #ffc600;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-link,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal {
+  color: #6896ba;
+}
+
+.hljs-code,
+.hljs-selector-class {
+  color: #ffffff;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-attribute,
+.hljs-name,
+.hljs-variable {
+  color: #ffc600 !important;
+}
+
+.hljs-params {
+  color: #ac25ac;
+}
+
+.hljs-function 
+.hljs-title{
+  color: #ff86ff !important;
+}
+
+.hljs-string {
+  color: #3ad900;
+}
+
+.hljs-subst,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-symbol,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition {
+  color: #e0c46c;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #7f7f7f;
+}*/
+/*!
+ * StackOverflow.com dark style
+ *
+ * @stackoverflow/stacks v0.56.0
+ * https://github.com/StackExchange/Stacks
+ */
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #ffffff;
+  background: #1c1b1b;
+}
+
+.hljs-comment {
+  color: #999999;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-meta-keyword,
+.hljs-doctag,
+.hljs-section,
+.hljs-selector-class,
+.hljs-meta,
+.hljs-selector-pseudo,
+.hljs-attr {
+  color: #88aece;
+}
+
+.hljs-attribute {
+  color: v#c59bc1;
+}
+
+.hljs-name,
+.hljs-type,
+.hljs-number,
+.hljs-selector-id,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-built_in,
+.hljs-title,
+.hljs-literal {
+  color: #f08d49;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-meta-string {
+  color: #b5bd68;
+}
+
+.hljs-bullet,
+.hljs-code {
+  color: #cccccc;
+}
+
+.hljs-deletion {
+  color: #de7176;
+}
+
+.hljs-addition {
+  color: #76c490;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-bullet,
+  .hljs-comment,
+  .hljs-link,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-params,
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-type,
+  .hljs-quote {
+        color: highlight;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag {
+        font-weight: bold;
+    }
 }
 </style>

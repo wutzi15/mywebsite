@@ -30,6 +30,11 @@ const routes = [
     props: true
   },
   {
+    path: '/SingleImage/:id',
+    name: 'SingleImage',
+    component: () => import('../views/SingleImage.vue')
+  },
+  {
     path: '/fotos',
     name: 'Fotos',
     component: () => import('../views/Fotos.vue'),

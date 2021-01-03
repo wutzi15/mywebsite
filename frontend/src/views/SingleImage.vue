@@ -1,0 +1,65 @@
+<template>
+<div class="columns">
+  <div class="column"></div>
+  <div class="column is-two-thirds">
+    <h1><span class="back-icon"><font-awesome-icon icon="arrow-left" @click="goBack"/></span> {{title}}</h1>
+    <a :href="url">
+      <img :src="url" :alt="desc">
+    </a>
+    <p>{{desc}}</p>
+  </div>
+  <div class="column"></div>
+</div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  name: "SingleImage",
+  data: function() {
+    return {
+      url: "",
+      title: "",
+      desc: ""
+    }
+  },
+  mounted() {
+    this.getImage();
+  },
+  methods: {
+    getImage: async function(){
+      const id = this.$route.params.id;
+      try {
+        const results = await axios.get("https://api.benedikt-bergenthal.de/images/" + id);
+        console.log(results.data)
+        this.url = "https://api.benedikt-bergenthal.de" + results.data.image.url;
+        this.title = results.data.name;
+        this.desc = results.data.description;
+
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    goBack: function() {
+      this.$router.go(-1)
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+body {
+  padding: 20px;
+}
+html {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+h1 {
+  font-size: 3rem;
+  span {
+    cursor: pointer;
+  }
+}
+</style>
