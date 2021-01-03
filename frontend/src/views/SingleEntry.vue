@@ -112,6 +112,9 @@ p {
 a{
   color: #aaa;
   font-weight: 600;
+  &:hover{
+    color: #ccc;
+  }
 }
 /*
 .hljs {
