@@ -88,6 +88,22 @@ h1 {
 h2 {
   font-size: 2rem;
 }
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1.1rem;
+}
 /*
 .hljs {
   display: block;
