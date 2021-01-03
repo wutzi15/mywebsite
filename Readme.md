@@ -17,3 +17,4 @@ It also documents my learning process :blush: .
 * [Buefy](https://buefy.org/)
 * [Showdown](http://showdownjs.com/)
 * [MongoDB](https://www.mongodb.com/)
+* [Caddy](https://caddyserver.com/)

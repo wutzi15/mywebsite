@@ -108,6 +108,11 @@ h6 {
 p {
   padding-bottom: 1.75rem;
 }
+
+a{
+  color: #aaa;
+  font-weight: 600;
+}
 /*
 .hljs {
   display: block;
