@@ -4,7 +4,7 @@
     <div class="column is-third">
       <h1>Blog</h1>
       <div v-for="entry in entries" :key="entry.id">
-        <router-link :to="`/SingleEntry/${entry.id}`" >
+        <router-link :to="`/SingleEntry/${entry.slug}`" >
           <BlogListItem :title="entry.title" :datecreated="entry.createdAt"></BlogListItem>
           </router-link>
           <hr>

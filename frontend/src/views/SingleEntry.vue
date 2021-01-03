@@ -28,14 +28,14 @@ export default {
   },
   methods: {
     convertText: async function() {
-      const id = this.$route.params.id;
+      const slug = this.$route.params.slug;
 
       try {
         const results = await axios.get(
-          `https://api.benedikt-bergenthal.de/blog-entries/${id}`
+          `https://api.benedikt-bergenthal.de/blog-entries?slug=${slug}`
         );
 
-        this.entry = results.data;
+        this.entry = results.data[0];
         const converter = new showdown.Converter();
         const tmp = converter.makeHtml(this.entry.content);
 
