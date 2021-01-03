@@ -1,4 +1,5 @@
 FROM node:latest as build-stage
+RUN npm install -g @vue/cli
 WORKDIR /app
 COPY package*.json ./
 RUN npm cache clean -f
