@@ -2,7 +2,10 @@ version: '3.7'
 
 services:
   strapi:
-    image: strapi/strapi
+    container_name: backend
+    build:
+      context: backend
+      dockerfile: Dockerfile
     secrets:
       - my_secrets
     volumes:
