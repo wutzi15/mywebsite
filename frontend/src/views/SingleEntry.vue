@@ -3,6 +3,9 @@
     <div class="column"></div>
     <div class="column is-half">
       <h1>{{ entry.title }}</h1>
+      <div class="readingTime" v-if="readingTime !== ''">
+      {{readingTime}} to read.
+      </div>
       <div v-html="myhtml"></div>
     </div>
     <div class="column"></div>
@@ -13,14 +16,15 @@
 import showdown from 'showdown';
 import axios from "axios";
 import hljs from "highlight.js";
-
+import readTime from './readingTime';
 
 export default {
   name: "SingleEntry",
   data: function() {
     return {
       myhtml : "",
-      entry: {}
+      entry: {},
+      readingTime: "",
     }
   },
   mounted() {
@@ -38,14 +42,14 @@ export default {
         this.entry = results.data[0];
         const converter = new showdown.Converter();
         const tmp = converter.makeHtml(this.entry.content);
-
+        this.readingTime = readTime(tmp);
         const tmpIMG = tmp.replace('<img src="/uploads', '<img src="https://api.benedikt-bergenthal.de/uploads');
         const dom = document.createElement('div');
         dom.innerHTML = tmpIMG;
         const codes = dom.querySelectorAll('code');
         for(var i = 0; i < codes.length; ++i) {
           const code = codes[i];
-          console.log(`InnerHTML: ${code.innerHTML}`)
+
           const highlighted = hljs.highlightAuto(code.innerHTML).value;
           code.innerHTML = highlighted;
         }
@@ -121,85 +125,9 @@ ul {
   list-style-position: inside;
 }
 
-/*
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  // background: #193549;
-  // color: #00354B;
+.readingTime {
+  text-align: right;
 }
-
-.hljs-strong,
-.hljs-emphasis {
-  color: #ffc600;
-}
-
-.hljs-bullet,
-.hljs-quote,
-.hljs-link,
-.hljs-number,
-.hljs-regexp,
-.hljs-literal {
-  color: #6896ba;
-}
-
-.hljs-code,
-.hljs-selector-class {
-  color: #ffffff;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-section,
-.hljs-attribute,
-.hljs-name,
-.hljs-variable {
-  color: #ffc600 !important;
-}
-
-.hljs-params {
-  color: #ac25ac;
-}
-
-.hljs-function 
-.hljs-title{
-  color: #ff86ff !important;
-}
-
-.hljs-string {
-  color: #3ad900;
-}
-
-.hljs-subst,
-.hljs-type,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-symbol,
-.hljs-selector-id,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-template-tag,
-.hljs-template-variable,
-.hljs-addition {
-  color: #e0c46c;
-}
-
-.hljs-comment,
-.hljs-deletion,
-.hljs-meta {
-  color: #7f7f7f;
-}*/
-/*!
- * StackOverflow.com dark style
- *
- * @stackoverflow/stacks v0.56.0
- * https://github.com/StackExchange/Stacks
- */
 
 .hljs {
   display: block;
