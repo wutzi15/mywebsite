@@ -6,12 +6,8 @@ services:
     build:
       context: backend
       dockerfile: Dockerfile
-    secrets:
-      - my_secrets
     volumes:
       - ./backend:/srv/app
-    # ports:
-    #   - 1337:1337
     depends_on:
       - mongo
       - caddy
@@ -21,8 +17,6 @@ services:
 
   mongo:
     image: mongo
-    secrets:
-      - my_secrets
     volumes:
       - ./data:/data/db
     env_file:
