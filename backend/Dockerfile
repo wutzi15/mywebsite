@@ -1,5 +1,5 @@
 FROM node:14 as build-stage
-WORKDIR /app
+WORKDIR /srv/app
 COPY package*.json ./
 ENV NODE_ENV=production
 RUN npm install
