@@ -56,6 +56,6 @@ body, html {
   margin:0;
   padding:0;
   color: $primary;
-  background: $dark;
+  background: #233748;
 }
 </style>

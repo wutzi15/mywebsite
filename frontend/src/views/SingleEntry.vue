@@ -2,7 +2,7 @@
   <div class="columns">
     <div class="column"></div>
     <div class="column is-half">
-      <h1>{{ entry.title }}</h1>
+      <h1><span class="back-icon"><font-awesome-icon icon="arrow-left" @click="goBack"/></span>{{ entry.title }}</h1>
       <div class="readingTime" v-if="readingTime !== ''">
       {{readingTime}} to read.
       </div>
@@ -62,6 +62,9 @@ export default {
         console.error(error);
       }
       // console.log(`Content: ${this.entry.content}`)
+    },
+    goBack: function() {
+      this.$router.go(-1)
     }
   }
 
@@ -69,15 +72,27 @@ export default {
 </script>
 
 <style lang="scss" >
+@import "~bulma/sass/utilities/_all";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import "../assets/scss/main.scss";
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+
+body, html {
+  margin:0;
+  padding:0;
+  color: $primary;
+  background: #233748;
+}
+
 code {
   font-family: "Fira Code", monospace;
   color: #333;
-  // background-color: #00354B;
 }
 
-// pre {
-//    background-color: #00354B;
-// }
 
 body {
   padding: 20px;
@@ -88,6 +103,11 @@ html {
 }
 h1 {
   font-size: 3rem;
+  span {
+    cursor: pointer;
+    padding-right: 1rem;
+    font-size: 2.5rem;
+  }
 }
 
 h2 {
