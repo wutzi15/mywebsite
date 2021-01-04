@@ -3,7 +3,7 @@ RUN npm install -g @vue/cli
 WORKDIR /app
 COPY package*.json ./
 RUN npm cache clean -f
-ENV NODE_ENV=production
+#ENV NODE_ENV=production
 RUN npm install
 COPY ./ .
 RUN npm run build
