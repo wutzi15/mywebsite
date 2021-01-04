@@ -1,7 +1,7 @@
 <template>
 <div class="">
   <h2>{{ title }}</h2>
-  <h3>{{ myDate }}</h3>
+  <h5 class="blogDate">{{ myDate }}</h5>
 </div>
 </template>
 
@@ -21,7 +21,13 @@ export default {
   computed: {
     myDate: function() {
       const d = new Date(this.datecreated);
-      return d.toLocaleString(navigator.language);
+      return d.toLocaleString(navigator.language, {
+        year: 'numeric',
+        month: 'long',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        });
     }
 
   }
@@ -31,5 +37,7 @@ export default {
 </script>
 
 <style>
-
+.blogDate {
+  text-align: right;
+}
 </style>
