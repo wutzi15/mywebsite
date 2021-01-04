@@ -39,20 +39,9 @@ export default {
     getEntries: async function () {
       try {
         const results = await axios.get(
-          "https://api.benedikt-bergenthal.de/blog-entries"
+          "https://api.benedikt-bergenthal.de/blog-entries?_sort=createdAt:desc"
         );
-        console.log(`Entrie ${results.data}`);
-        let myData = results.data.sort((a,b) => {
-          const dateA = new Date(a.createdAt);
-          const dateB = new Date(b.createdAt);
-          if (dateA < dateB) {
-            return 1;
-          }
-          if (dateA > dateB) {
-            return -1;
-          }
-          return 0;
-        })
+        const myData = results.data;
         let outData = [];
 
         for(let i = 0; i < myData.length; i++) {
