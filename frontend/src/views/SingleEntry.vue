@@ -116,6 +116,11 @@ a{
     color: #ccc;
   }
 }
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
 /*
 .hljs {
   display: block;
