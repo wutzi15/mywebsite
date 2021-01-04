@@ -6,6 +6,7 @@
       <div class="readingTime" v-if="readingTime !== ''">
       {{readingTime}} to read.
       </div>
+      <img v-if="entry.media[0]" :src="`https://api.benedikt-bergenthal.de${entry.media[0].url}`" :alt="entry.media[0].alternativeText">
       <div v-html="myhtml"></div>
     </div>
     <div class="column"></div>

@@ -2,6 +2,7 @@
 <div class="">
   <h2>{{ title }}</h2>
   <h5 class="blogDate">{{ myDate }}</h5>
+  <img :src="`https://api.benedikt-bergenthal.de${imageURL}`" :alt="imageAlt">
 </div>
 </template>
 
@@ -16,7 +17,15 @@ export default {
     datecreated: {
       type: String,
       default: ""
-    }
+    },
+    imageURL: {
+      type: String,
+      default: ""
+    },
+    imageAlt: {
+      type: String,
+      default: ""
+    },
   },
   computed: {
     myDate: function() {

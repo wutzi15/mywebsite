@@ -1,11 +1,15 @@
 <template>
   <div class="columns">
     <div class="column"></div>
-    <div class="column is-third">
+    <div class="column is-two-thirds">
       <h1>Blog</h1>
       <div v-for="entry in entries" :key="entry.id">
         <router-link :to="`/SingleEntry/${entry.slug}`" >
-          <BlogListItem :title="entry.title" :datecreated="entry.createdAt"></BlogListItem>
+          <BlogListItem :title="entry.title"
+                        :datecreated="entry.createdAt"
+                        :imageURL="entry.media.url"
+                        :imageAlt="entry.media.alternativeText">
+          </BlogListItem>
           </router-link>
           <hr>
       </div>
@@ -38,7 +42,7 @@ export default {
           "https://api.benedikt-bergenthal.de/blog-entries"
         );
         console.log(`Entrie ${results.data}`);
-        const myData = results.data.sort((a,b) => {
+        let myData = results.data.sort((a,b) => {
           const dateA = new Date(a.createdAt);
           const dateB = new Date(b.createdAt);
           if (dateA < dateB) {
@@ -49,7 +53,21 @@ export default {
           }
           return 0;
         })
-        this.entries = myData;
+        let outData = [];
+
+        for(let i = 0; i < myData.length; i++) {
+          let d = myData[i];
+          if (d.media[0] === undefined) {
+            d.media = {url:"", alt:""};
+          } else  {
+            d.media = d.media[0]
+          }
+          outData.push(d);
+        }
+
+        this.entries = outData;
+
+        console.log(JSON.stringify(this.entries))
       } catch (error) {
         console.error(error);
       }
