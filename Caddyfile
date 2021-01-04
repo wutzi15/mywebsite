@@ -10,3 +10,7 @@ benedikt-bergenthal.de {
 hooks.benedikt-bergenthal.de {
 	reverse_proxy http://benedikt-bergenthal.de:9000
 }
+
+www.benedikt-bergenthal.de {
+	redir benedikt-bergenthal.de
+}
