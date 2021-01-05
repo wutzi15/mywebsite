@@ -2,19 +2,19 @@
   <div class="menu">
     <ul>
       <li>
-        <router-link v-on:click.native="toggleMenu" :to="{ path: '/' }">Home</router-link>
+        <router-link @click="toggleMenu" :to="{ path: '/' }">Home</router-link>
       </li>
       <li>
-        <router-link v-on:click.native="toggleMenu" :to="{ path: '/fotos' }">Fotos</router-link>
+        <router-link @click="toggleMenu" :to="{ path: '/fotos' }">Fotos</router-link>
       </li>
       <li>
-        <router-link v-on:click.native="toggleMenu" :to="{ path: '/blog' }">Blog</router-link>
+        <router-link @click="toggleMenu" :to="{ path: '/blog' }">Blog</router-link>
       </li>
       <li>
-        <router-link v-on:click.native="toggleMenu" :to="{ path: '/impressum' }">Impressum</router-link>
+        <router-link @click="toggleMenu" :to="{ path: '/impressum' }">Impressum</router-link>
       </li>
       <li>
-        <router-link v-on:click.native="toggleMenu" :to="{ path: '/datenschutz' }">Datenschutz</router-link>
+        <router-link @click="toggleMenu" :to="{ path: '/datenschutz' }">Datenschutz</router-link>
       </li>
     </ul>
   </div>
