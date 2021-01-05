@@ -14,7 +14,6 @@ It also documents my learning process :blush: .
 * [FontAwesome](https://fontawesome.com/)
 * [highlightjs](https://highlightjs.org/)
 * [Masonry](https://masonry.desandro.com/)
-* [Buefy](https://buefy.org/)
 * [Showdown](http://showdownjs.com/)
 * [MongoDB](https://www.mongodb.com/)
 * [Caddy](https://caddyserver.com/)
