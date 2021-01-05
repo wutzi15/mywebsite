@@ -1,4 +1,9 @@
 FROM node:latest as build-stage
+WORKDIR /
+RUN git clone https://github.com/highlightjs/highlight.js.git
+WORKDIR /highlight.js
+RUN npm install
+RUN node tools/build.js -t node -n apache bash c cmake cpp css django dns dockerfile go http javascript latex lua makefile markdown nginx objectivec php plaintext protobuf python scss sql swift typescript yaml xml ruby
 RUN npm install -g @vue/cli
 WORKDIR /app
 COPY package*.json ./
