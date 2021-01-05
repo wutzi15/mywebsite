@@ -6,7 +6,7 @@
       <div class="readingTime" v-if="readingTime !== ''">
       {{readingTime}} to read.
       </div>
-      <img v-if="entry.media[0]" :src="`https://api.benedikt-bergenthal.de${entry.media[0].url}`" :alt="entry.media[0].alternativeText">
+      <img v-if="hasMedia" :src="`https://api.benedikt-bergenthal.de${entry.media[0].url}`" :alt="entry.media[0].alternativeText">
       <div v-html="myhtml"></div>
     </div>
     <div class="gap"></div>
@@ -26,6 +26,7 @@ export default {
       myhtml : "",
       entry: {},
       readingTime: "",
+      hasMedia: false
     }
   },
   mounted() {
@@ -56,7 +57,9 @@ export default {
         }
 
         this.myhtml = dom.innerHTML;
-
+        if (this.entry.media[0]) {
+          this.hasMedia = true;
+        }
       }catch(error){
         console.error(error);
       }
