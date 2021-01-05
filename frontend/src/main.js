@@ -1,5 +1,5 @@
-import Buefy from 'buefy';
-import 'buefy/dist/buefy.css';
+//import Buefy from 'buefy';
+//import 'buefy/dist/buefy.css';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
@@ -12,7 +12,7 @@ library.add(faArrowLeft)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false;
-Vue.use(Buefy);
+// Vue.use(Buefy);
 
 new Vue({
   router,
