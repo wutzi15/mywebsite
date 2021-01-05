@@ -6,8 +6,9 @@ RUN npm install
 RUN node tools/build.js -t node -n apache bash c cmake cpp css django dns dockerfile go http javascript latex lua makefile markdown nginx objectivec php plaintext protobuf python scss sql swift typescript yaml xml ruby
 RUN npm install -g @vue/cli
 WORKDIR /app
+RUN npx eslint --fix ../highlight.js/build/lib/core.js
 COPY package*.json ./
-RUN npm cache clean -f
+#RUN npm cache clean -f
 #ENV NODE_ENV=production
 RUN npm install
 COPY ./ .
