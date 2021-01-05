@@ -58,9 +58,9 @@ export default {
 
         this.entries = outData;
 
-        console.log(JSON.stringify(this.entries));
+        // console.log(JSON.stringify(this.entries));
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       }
     },
   },

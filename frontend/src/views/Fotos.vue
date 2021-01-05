@@ -44,15 +44,15 @@ export default {
           });
         });
         const elem = document.querySelector(".grid");
-        console.log(elem);
+        // console.log(elem);
         const msnry = new Masonry(elem, {
           // options
           itemSelector: ".grid-item",
           columnWidth: 200,
         });
-        console.log(msnry);
+        // console.log(msnry);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     },
   },

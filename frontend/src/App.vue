@@ -9,12 +9,12 @@
       <ul class="social" v-if="isStart">
         <li>
           <a href="https://www.facebook.com/benedikt.wutzi"
-            ><img src="https://i.ibb.co/x7P24fL/facebook.png"
+            ><img src="./assets/images/facebook-square-brands.png" alt="Facebook"
           /></a>
         </li>
         <li>
           <a href="https://www.instagram.com/benediktbergenthal/"
-            ><img src="https://i.ibb.co/ySwtH4B/instagram.png"
+            ><img src="./assets/images/instagram-brands.png" alt="Instagram"
           /></a>
         </li>
       </ul>
@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     isStart() {
-      console.log(this.$route.name);
+      //console.log(this.$route.name);
       return this.$route.name == "Home";
     },
   },
@@ -82,18 +82,20 @@ header {
   position: relative;
   width: 60px;
   height: 60px;
-  background: url(https://i.ibb.co/HrfVRcx/menu.png);
+  background: url("./assets/images/bars-solid.svg");
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center;
+  filter: invert(1);
   cursor: pointer;
 }
 
 .toggle.active {
-  background: url(https://i.ibb.co/rt3HybH/close.png);
+  background: url("./assets/images/times-solid.svg");
   background-repeat: no-repeat;
   background-size: 25px;
   background-position: center;
+  filter: invert(1);
   cursor: pointer;
 }
 
@@ -138,14 +140,13 @@ header {
     a {
       display: inline-block;
       margin-right: 20px;
-      filter: invert(1);
-      transform: scale(0.5);
+      transform: scale(0.75);
       transition: 0.5s;
     }
   }
 }
 .social li a:hover {
-  transform: scale(0.5) translateY(-15px);
+  transform: scale(0.75) translateY(-15px);
 }
 
 @media (max-width: 991px) {

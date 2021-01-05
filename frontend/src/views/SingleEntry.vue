@@ -2,7 +2,7 @@
   <div class="columns">
     <div class="gap"></div>
     <div class="column">
-      <h1><span class="back-icon"><font-awesome-icon icon="arrow-left" @click="goBack"/></span>{{ entry.title }}</h1>
+      <h1><img src="../assets/images/arrow-left-solid.png" alt="go back" class="back-arrow" @click="goBack">{{ entry.title }}</h1>
       <div class="readingTime" v-if="readingTime !== ''">
       {{readingTime}} to read.
       </div>
@@ -61,7 +61,7 @@ export default {
           this.hasMedia = true;
         }
       }catch(error){
-        console.error(error);
+        // console.error(error);
       }
       // console.log(`Content: ${this.entry.content}`)
     },
@@ -108,6 +108,11 @@ pre{
   overflow-x: scroll;
 }
 
+.back-arrow {
+  width: 0.8em;
+  margin-right: 10px;
+  cursor: pointer;
+}
 
 
 h1 {
