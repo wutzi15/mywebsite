@@ -36,5 +36,30 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    position: relative;
+    li{
+      list-style: none;
+      a {
+        text-decoration: none;
+        font-size: 24px;;
+        color: #111;
+        &:hover {
+          color: #03a9f4;
+        }
+      }
+    }
+  }
+}
 </style>

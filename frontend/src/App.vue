@@ -6,9 +6,20 @@
         <div class="toggle" @click="toggleMenu"></div>
       </header>
       <router-view></router-view>
+      <ul class="social" v-if="isStart">
+        <li>
+          <a href="https://www.facebook.com/benedikt.wutzi"
+            ><img src="https://i.ibb.co/x7P24fL/facebook.png"
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/benediktbergenthal/"
+            ><img src="https://i.ibb.co/ySwtH4B/instagram.png"
+          /></a>
+        </li>
+      </ul>
     </section>
     <Navbar></Navbar>
-
   </div>
 </template>
 
@@ -16,12 +27,10 @@
 // @ is an alias to /src
 import Navbar from "@/views/Navbar.vue";
 
-
 export default {
   name: "App",
   components: {
     Navbar,
-
   },
   computed: {
     isStart() {
@@ -30,32 +39,26 @@ export default {
     },
   },
   methods: {
-    toggleMenu: function(){
-      const menuToggle = document.querySelector('.toggle');
-      const showcase = document.querySelector('.showcase');
+    toggleMenu: function () {
+      const menuToggle = document.querySelector(".toggle");
+      const showcase = document.querySelector(".showcase");
 
-      menuToggle.classList.toggle('active');
-      showcase.classList.toggle('active');
-    }
-  }
+      menuToggle.classList.toggle("active");
+      showcase.classList.toggle("active");
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-// @import "~bulma/sass/utilities/_all";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
-// @import "./assets/scss/main.scss";
-// Import Bulma and Buefy styles
-// @import "~bulma";
-// @import "~buefy/src/scss/buefy";
 
 * {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
-  box-sizing:border-box;
-
+  box-sizing: border-box;
 }
 
 header {
@@ -106,16 +109,6 @@ header {
   background: #111;
   transition: 0.5s;
   z-index: 2;
-
-  img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-  }
 }
 
 .showcase.active {
@@ -132,73 +125,39 @@ header {
   mix-blend-mode: overlay;
 }
 
-.text {
-  position: relative;
-  z-index: 10;
-  h2 {
-    font-size: 5em;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1em;
-    text-transform: uppercase;
-  }
-
-  h3 {
-    font-size: 4em;
-    color: #fff;
-    line-height: 1em;
-    text-transform: uppercase;
-  }
-
-  p{
-    font-size: 1.1em;
-    color: #fff;
-    margin: 20px 0;
-    font-weight: 400;
-    max-width: 700px;
-  }
-
-}
-
-.menu {
+.social {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 100%;
+  z-index: 10;
+  bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  ul {
-    position: relative;
-    li{
-      list-style: none;
-      a {
-        text-decoration: none;
-        font-size: 24px;;
-        color: #111;
-        &:hover {
-          color: #03a9f4;
-        }
-      }
+
+  li {
+    list-style: none;
+    a {
+      display: inline-block;
+      margin-right: 20px;
+      filter: invert(1);
+      transform: scale(0.5);
+      transition: 0.5s;
     }
   }
 }
+.social li a:hover {
+  transform: scale(0.5) translateY(-15px);
+}
 
-@media(max-width: 991px) {
+@media (max-width: 991px) {
   .showcase,
-  .showcase header
-  {
+  .showcase header {
     padding: 40px;
   }
-  .text h2
-  {
+  .text h2 {
     font-size: 3em;
   }
-  .text h3
-  {
+  .text h3 {
     font-size: 2em;
   }
 }
-
 </style>

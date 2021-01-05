@@ -1,7 +1,7 @@
 <template>
   <div class="columns">
-    <div class="column"></div>
-    <div class="column is-half">
+    <div class="gap"></div>
+    <div class="column">
       <h1><span class="back-icon"><font-awesome-icon icon="arrow-left" @click="goBack"/></span>{{ entry.title }}</h1>
       <div class="readingTime" v-if="readingTime !== ''">
       {{readingTime}} to read.
@@ -9,7 +9,7 @@
       <img v-if="entry.media[0]" :src="`https://api.benedikt-bergenthal.de${entry.media[0].url}`" :alt="entry.media[0].alternativeText">
       <div v-html="myhtml"></div>
     </div>
-    <div class="column"></div>
+    <div class="gap"></div>
   </div>
 </template>
 
@@ -55,7 +55,6 @@ export default {
           code.innerHTML = highlighted;
         }
 
-
         this.myhtml = dom.innerHTML;
 
       }catch(error){
@@ -71,30 +70,43 @@ export default {
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 
 
-
-body, html {
-  margin:0;
-  padding:0;
-  color: #fa9004;
-  background: #233748;
+.columns {
+  display: grid;
+ grid-template-columns: repeat(12, 1fr);
 }
 
+.column {
+  grid-column: span 8;
+}
+
+.gap {
+  grid-column: span 2;
+}
+
+*{
+  color:#fff;
+}
+
+img {
+  width: 100%;
+}
 code {
   font-family: "Fira Code", monospace;
   color: #333;
+  overflow-x: scroll;
+}
+
+pre{
+  background-color: #fff;
+  margin-bottom: 20px;
+  overflow-x: scroll;
 }
 
 
-body {
-  padding: 20px;
-}
-html {
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
+
 h1 {
   font-size: 3rem;
   span {
@@ -103,59 +115,80 @@ h1 {
     font-size: 2.5rem;
   }
 }
-
 h2 {
   font-size: 2rem;
 }
-
 h3 {
   font-size: 1.5rem;
 }
-
 h4 {
   font-size: 1.25rem;
 }
-
 h5 {
   font-size: 1.15rem;
 }
-
 h6 {
   font-size: 1.1rem;
 }
-
 p {
   padding-bottom: 1.75rem;
+  font-size: 1em;
+  line-height: 1.6em;
 }
-
 a{
   color: #aaa;
   font-weight: 600;
   &:hover{
     color: #ccc;
   }
+  text-decoration: none;
 }
 ul {
   list-style-type: disc;
   list-style-position: inside;
 }
-
 .readingTime {
   text-align: right;
 }
+@media (max-width: 991px) {
+  .columns {
+    display:flex;
+    padding: 0px 10px 10px 10px;
+    margin-top: 120px;
+    width: 100%;
+  }
+  .column {
+    width: 100%;
+    // max-width: 80vw;
+  }
+
+  .gap {
+    display: none;
+    column-span: span 0;
+  }
+
+  .showcase {
+    padding: 0;
+  }
+
+  .showcase header
+  {
+    padding: 40px;
+  }
+}
+
 
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  color: #ffffff;
+  //color: #ffffff;
+
   background: #1c1b1b;
 }
-
 .hljs-comment {
   color: #999999;
 }
-
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-meta-keyword,
@@ -167,11 +200,9 @@ ul {
 .hljs-attr {
   color: #88aece;
 }
-
 .hljs-attribute {
-  color: v#c59bc1;
+  color: #c59bc1;
 }
-
 .hljs-name,
 .hljs-type,
 .hljs-number,
@@ -183,7 +214,6 @@ ul {
 .hljs-literal {
   color: #f08d49;
 }
-
 .hljs-string,
 .hljs-regexp,
 .hljs-symbol,
@@ -194,28 +224,22 @@ ul {
 .hljs-meta-string {
   color: #b5bd68;
 }
-
 .hljs-bullet,
 .hljs-code {
   color: #cccccc;
 }
-
 .hljs-deletion {
   color: #de7176;
 }
-
 .hljs-addition {
   color: #76c490;
 }
-
 .hljs-emphasis {
   font-style: italic;
 }
-
 .hljs-strong {
   font-weight: bold;
 }
-
 @media screen and (-ms-high-contrast: active) {
   .hljs-addition,
   .hljs-attribute,
@@ -234,7 +258,6 @@ ul {
   .hljs-quote {
         color: highlight;
     }
-
     .hljs-keyword,
     .hljs-selector-tag {
         font-weight: bold;

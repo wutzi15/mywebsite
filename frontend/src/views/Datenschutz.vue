@@ -75,6 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 .datenschutz {
+  color: #fff;
   padding: 40px 20px;
   text-align: justify;
   font-size: 1.25rem;

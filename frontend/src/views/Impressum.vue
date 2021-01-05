@@ -49,6 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 .impressum {
+  color: #fff;
   text-align: justify;
   padding: 40px 20px;
   font-size: 1.25rem;

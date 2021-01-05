@@ -12,7 +12,6 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "@vue/cli": "^4.5.9",
     "axios": "^0.21.1",
-    "buefy": "^0.9.4",
     "core-js": "^3.8.1",
     "highlight.js": "^10.5.0",
     "jquery": "^3.5.1",

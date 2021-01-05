@@ -45,8 +45,25 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .blogDate {
   text-align: right;
+  padding-bottom: 20px;
+}
+
+h2 {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+h5 {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+img {
+  width: 100%;
 }
 </style>

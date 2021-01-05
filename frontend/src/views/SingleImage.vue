@@ -49,17 +49,19 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  padding: 20px;
-}
-html {
-  padding-top: 50px;
-  padding-bottom: 20px;
+img {
+  width: 100%;
 }
 h1 {
   font-size: 3rem;
+  color: #fff;
+  margin-bottom: 20px;
   span {
     cursor: pointer;
   }
+}
+
+p {
+  color: #fff;
 }
 </style>
