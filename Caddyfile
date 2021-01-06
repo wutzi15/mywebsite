@@ -4,6 +4,9 @@ api.benedikt-bergenthal.de {
 
 benedikt-bergenthal.de {
 	encode gzip
+	header (.png|.jpg|.jpeg|.gif|.woff2|.woff|.svg|.ttf){
+		Cache-Control "public, max-age=84600"
+	}
 	reverse_proxy frontend
 }
 
