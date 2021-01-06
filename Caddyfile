@@ -4,10 +4,12 @@ api.benedikt-bergenthal.de {
 
 benedikt-bergenthal.de {
 	encode gzip
-	header (.png|.jpg|.jpeg|.gif|.woff2|.woff|.svg|.ttf){
-		Cache-Control "public, max-age=84600"
-	}
+	header @static Cache-Control max-age=84600
 	reverse_proxy frontend
+}
+
+@static {
+  path_regexp \.(png|jpg|jpeg|gif|woff2|woff|svg|ttf)$
 }
 
 hooks.benedikt-bergenthal.de {
