@@ -1,3 +1,9 @@
+@static {
+
+  file
+  path *.png *.jpg *.jpeg *.gif *.woff2 *.woff *.ttf
+}
+
 api.benedikt-bergenthal.de {
 	reverse_proxy strapi:1337
 }
@@ -8,9 +14,6 @@ benedikt-bergenthal.de {
 	reverse_proxy frontend
 }
 
-@static {
-  path_regexp \.(png|jpg|jpeg|gif|woff2|woff|svg|ttf)$
-}
 
 hooks.benedikt-bergenthal.de {
 	reverse_proxy http://benedikt-bergenthal.de:9000
