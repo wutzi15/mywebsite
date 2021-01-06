@@ -1,8 +1,3 @@
-@static {
-
-  file
-  path *.png *.jpg *.jpeg *.gif *.woff2 *.woff *.ttf
-}
 
 api.benedikt-bergenthal.de {
 	reverse_proxy strapi:1337
@@ -10,6 +5,11 @@ api.benedikt-bergenthal.de {
 
 benedikt-bergenthal.de {
 	encode gzip
+	@static {
+
+	file
+	path *.png *.jpg *.jpeg *.gif *.woff2 *.woff *.ttf
+	}
 	header @static Cache-Control max-age=84600
 	reverse_proxy frontend
 }
