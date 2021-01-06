@@ -6,7 +6,7 @@
       <div class="readingTime" v-if="readingTime !== ''">
       {{readingTime}} to read.
       </div>
-      <img v-if="hasMedia" :src="`https://api.benedikt-bergenthal.de${entry.media[0].url}`" :alt="entry.media[0].alternativeText">
+      <img v-if="hasMedia" :src="`https://api.benedikt-bergenthal.de${entry.media[0].url}`" :alt="entry.media[0].alternativeText" class="header-image">
       <div v-html="myhtml"></div>
     </div>
     <div class="gap"></div>
@@ -112,6 +112,10 @@ pre{
   width: 0.8em;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.header-image {
+  width: 100%;
 }
 
 
