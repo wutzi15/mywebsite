@@ -5,11 +5,7 @@ api.benedikt-bergenthal.de {
 
 benedikt-bergenthal.de {
 	encode gzip
-	@static {
-		file
-		path *.png *.jpg *.jpeg *.gif *.woff2 *.woff *.ttf
-	}
-	header @static ?Cache-Control "public, max-age=86400"
+
 	reverse_proxy frontend
 }
 
